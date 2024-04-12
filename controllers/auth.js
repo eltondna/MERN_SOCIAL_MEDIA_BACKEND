@@ -50,7 +50,7 @@ const login = (req,res)=>{
         
          // Generate JWT
          const token = jwt.sign(
-            {useId:data[0].id},
+            {userId:data[0].id},
             process.env.JWT_SECRET,
             {expiresIn: '30d'}
         )

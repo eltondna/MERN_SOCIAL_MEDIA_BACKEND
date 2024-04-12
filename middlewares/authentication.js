@@ -13,7 +13,7 @@ const auth = (req, res,next)=>{
     try{
         const payload = jwt.verify(token,process.env.JWT_SECRET)
         console.log(payload)
-        req.user = payload.userID;
+        req.userId = payload['userId'];
         next();
     }catch (err){
         console.log(error)
@@ -21,3 +21,5 @@ const auth = (req, res,next)=>{
     }
 
 }
+
+module.exports = auth
