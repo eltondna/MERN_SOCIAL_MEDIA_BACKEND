@@ -16,10 +16,10 @@ app.use(cors())     // Allow all origin
 
 
 
-app.use("/api/users",userRoutes)
+app.use("/api/users",auth,userRoutes)
 app.use("/api/auth",authRoutes)
-app.use("/api/comments",commentsRoutes)
-app.use("/api/likes",likesRoutes)
+app.use("/api/comments",auth,commentsRoutes)
+app.use("/api/likes",auth,likesRoutes)
 app.use("/api/posts",auth,postsRoutes)
 
 
